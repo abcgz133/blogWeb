@@ -12,5 +12,5 @@
   后台地址：http://localhost:3000/admin/login
   前台地址：http://localhost:3000/home
 
-  登录邮箱：itheima@itcast.cn
+  登录邮箱：abcgz@126.com
   登录密码：123456
