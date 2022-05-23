@@ -1,0 +1,19 @@
+<!-- aside -->
+<div class="aside fl">
+    <ul class="menu list-unstyled">
+        <li>
+            <a class="item {{currentLink == 'user' ? 'active' : ''}}" href="/admin/usersPage">
+				<span class="glyphicon glyphicon-user"></span>
+				User Management
+			</a>
+        </li>
+        <li>
+            <a class="item {{currentLink == 'article' ? 'active' : ''}}" href="/admin/articles-page">
+	  			<span class="glyphicon glyphicon-th-list"></span>
+	  			Article Management
+	  		</a>
+        </li>
+    </ul>
+    
+</div>
+<!-- aside -->
