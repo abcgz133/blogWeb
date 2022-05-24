@@ -8,7 +8,7 @@
 以及渲染article文件：article.art
 
 2022年3月8日V1.3版本说明
-1. 增加了修改文章功能（在后台）
+1. 增加了修改文章功能（在后台 modify the article）
 A. 主要是对article-edit.js做了修改
 B. 在article-modify.js文件中，引入了formidable对象来处理form表单。
 C. 系统原有的article-edit.art中，其实已经有如何处理读取文件的处理，以及获得从服务器返回result的图像回显。
