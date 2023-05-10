@@ -6,27 +6,25 @@ Catalogue
 
 1.Introduction（a blog for Canadian wine users）
 
-2.UI design
+2. Testing of the adminstration platform
 
-  2.1 adminstration platform
+3. Testing the operation platform
 
-  2.2 Operation platform
+4. Initialization and configuration 
 
-3. Initialization and configuration 
+  4.1 Initialization
 
-  3.1 Initialization
+  4.2 Platform Routing
 
-  3.2 Platform Routing
+  4.3 Configure management
 
-  3.3 Configure management
+  4.4 Middle ware of interceptor
 
-  3.4 Middle ware of interceptor
+  4.5 Authentication 
 
-  3.5 Authentication 
+  4.6 Error handling
 
-  3.6 Error handling
-
-4. Modelling
+4. Scheme of the Data
 
   4.1 User
 
@@ -430,7 +428,7 @@ res.redirect(`${result.path}?${params.join('&')}`);
 
 
 
-# 4. Modelling
+# 4. Scheme of the Data
 
 
 
