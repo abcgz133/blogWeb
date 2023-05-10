@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/admin/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/css/base.css">
+    <!-- option -->
+    <link rel="stylesheet" href="/admin/css/login.css">
+</head>
+
+<body>
+    <div class="login-body">
+        <div class="login-container">
+            <h4 class="title">Login</h4>
+            <div class="login">
+                <form action="/admin/login" method="post" id="loginForm">
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input name="email" type="email" class="form-control" placeholder="Pls input email">
+                    </div>
+                    <div class="form-group">
+                        <label>PASSWORD</label>
+                        <input name="password" type="password" class="form-control" placeholder="Pls input password">
+                    </div>
+                    <div class="savepass">
+                        <div class="savepass-check">Remember password</div>
+                        <div class="savepass-a">Forgot password？</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+            <div class="tips"></div>
+        </div>
+    </div>
+    <script src="/admin/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/admin/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/admin/js/common.js"></script>
+    <script type="text/javascript">
+        // event for the submit the form
+        $('#loginForm').on('submit', function () {
+            // get the value of user input 
+            var result = serializeToJson($(this))
+            // if no email 
+            if (result.email.trim().length == 0) {
+                alert('Pls input the email');
+                // return 
+                return false;
+            }
+            // if no password
+            if (result.password.trim().length == 0) {
+                alert('PLS input the password')
+                // return
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

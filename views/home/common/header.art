@@ -1,0 +1,38 @@
+<!-- 头部框架开始 -->
+<div class="header">
+	<div class="w1100">
+		<!-- 网站logo开始 -->
+		<h1 class="logo fl">
+			<a href="/home/" style="color:white;margin-top:2px;">Operation Platform</a>
+		</h1>
+		<!-- 网站logo结束 -->
+		<!-- 网站导航开始 -->
+		
+		<ul class="navigation fr">
+			<li>
+				<a class="active" href="/home/">Home</a>
+			</li>
+			
+			{{if !usernameSession}}
+			<li>
+				<a href="/admin/login">Login</a>
+			</li>
+			{{/if}}
+			
+			
+			{{if usernameSession}}
+				<li>
+				<a href="/home/logout">Logout</a>
+			</li>
+
+			{{/if}}
+			<li>
+			<a >  {{usernameSession}}</a>
+			</li>
+		</ul>
+		
+		
+		<!-- 网站导航结束 -->
+	</div>
+</div>
+<!-- 头部框架结束 -->

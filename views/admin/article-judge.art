@@ -1,0 +1,87 @@
+{{extend './common/layout.art'}}
+
+{{block 'main'}}
+    {{include './common/header.art'}}
+    <!-- Main part -->
+    <div class="content">
+        {{include './common/aside.art'}}
+        <div class="main">
+				<!-- indicate it is article section -->
+            <div class="title">
+                <h4>ARTICLE</h4>
+            </div>
+			<div class="title">
+                <h6 style="display: {{button == 'EDIT' ? 'block' : 'none'}}">{{@article && article._id}}</h6>
+                <p class="tips">{{message}}</p>
+            </div>
+				<!-- /indicate it is article section -->
+
+            <form class="form-container" action="{{link}}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>TITLE</label>
+                    <input type="text" class="form-control" placeholder="Please input the title" name="title" value="{{article && article.title}}" required>
+                </div>
+                <div class="form-group">
+                    <label>AUTHOR</label>
+                    <input name="author" type="text" class="form-control" readonly value="{{@useridSession}}">
+                </div>
+                <div class="form-group">
+                    <label>PUBLISH-DATE</label>
+                    <input name="publishDate" type="date" class="form-control" >
+                </div>
+                <div class="form-group">
+                   <label for="exampleInputFile">COVER</label>
+                   <input type="file" name="cover" id="file" required>
+                   <div class="thumbnail-waper">
+                       <img class="img-thumbnail" src="{{article && article.cover}}" id="preview">
+                   </div>
+                </div>
+                <div class="form-group">
+                    <label>CONTENT</label>
+                    <textarea name="content" class="form-control" id="editor"  value="{{article && article.content}}"></textarea>
+                </div>
+                <div class="buttons">
+                    <input type="submit" class="btn btn-primary" value="{{button}}">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /Main part -->
+{{/block}}
+
+{{block 'script'}}
+    <script src="/admin/lib/ckeditor5/ckeditor.js"></script>
+    <script type="text/javascript">
+    
+        let editor;
+
+        ClassicEditor
+                .create( document.querySelector('#editor'))
+                .then(newEditor => {
+                    editor = newEditor;
+                })
+                .catch( error => {
+                    console.error( error );
+                });
+
+        // get the data
+        // const editorData = editor.getData();
+        
+        // get the HTML of the file 
+        var file = document.querySelector('#file');
+        var preview = document.querySelector('#preview');
+        // after the user selected the file 
+        file.onchange = function () {
+            // 1 Create the instance of FileReader
+            var reader = new FileReader();
+            // 2 Read the file
+            reader.readAsDataURL(this.files[0]);
+            // 3 Listen the onLoad event
+            reader.onload = function () {
+                // display the read file on the form 
+                preview.src = reader.result;
+            }
+        }
+
+    </script>
+{{/block}}

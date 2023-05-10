@@ -1,0 +1,24 @@
+2022年4月10日V1.5版本说明
+
+1. 把原来user-edit.js(中间判断处理)这类容易混淆的名字，统一设定为user-judge.js（preload?）
+2. 代码生成器
+4, 所有的之前./admin/login.js,改为user-query.js（但路由./route/admin.js中的'/login' method=post，不能改）
+
+3. 所有的./admin/loginPage.js， 改为login.js，（这个暂时不要改，因为涉及到授权拦截、路由等等） 所有的./admin/user.art,改为users-page.art
+所有的./admin/article.art，改为./admin/articles-page.art
+5. 所有的 ./home/index.js， 改为article-page.js, ./home/default.art，改为 articles-page.art
+6. 明白所有的index其实是列出用户s名称的列表js文件。或者是列出articles名称的列表文件。
+7. 所有的./admin/user 改为 ./admin/usersPage
+8. 在home的view增加显示用户名字
+前改版内容
+
+1、 对以前用户号串号做了修正。
+把用户号从app.req.local.userInfo取出，改为从session取出
+涉及到用户登录文件：login.js
+前台，查询单一article的文件：article.js
+以及渲染article文件：article.art
+
+2、 增加了修改文章功能（在后台）
+A. 主要是对article-edit.js做了修改
+B. 在article-modify.js文件中，引入了formidable对象来处理form表单。
+C. 系统原有的article-edit.art中，其实已经有如何处理读取文件的处理，以及获得从服务器返回result的图像回显。

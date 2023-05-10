@@ -1,0 +1,8 @@
+2022年3月5日V1.2版本说明
+
+改版内容
+1、 对以前用户号串号做了修正。
+把用户号从app.req.local.userInfo取出，改为从session取出
+涉及到用户登录文件：login.js
+前台，查询单一article的文件：article.js
+以及渲染article文件：article.art

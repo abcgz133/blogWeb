@@ -1,0 +1,16 @@
+
+1. 安装MongoDB。
+
+  安装包
+  文件名：mongodb-win32-x86_64-2012plus-4.1.6-signed.msi
+// 检查数据库Mongodb： logWeb, 执行： node app.js
+
+2. 执行 nodemon app.js 启动项目。
+
+3. 访问以下地址。
+
+  后台地址：http://localhost:3000/admin/login
+  前台地址：http://localhost:3000/home
+
+  登录邮箱：abcgz@126.com
+  登录密码：123456

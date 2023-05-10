@@ -1,0 +1,64 @@
+{{extend './common/layout.art'}}
+
+{{block 'link'}}
+	<link rel="stylesheet" href="/home/css/article.css">
+{{/block}}
+
+{{block 'main'}}
+	{{include './common/header.art'}}
+	<div class="article">
+		<div class="w1100">
+			<div class="container">
+				<!-- to display the article -->
+				<div class="article-header">
+					<h3 class="article-title">{{article.title}}</h3>
+					<div class="article-info">
+						<span class="author">{{article.author.username}}</span>
+						<span>{{dateFormat(article.publishDate, 'yyyy-mm-dd')}}</span>
+					</div>
+				</div>
+				<div class="article-content">
+					{{@article.content}}
+				</div>
+				<!-- end to display the article -->
+				
+				<!-- to write the comment -->
+				<div class="article-comment">
+					{{if usernameSession}}
+					<h4>Comment</h4>
+					<form class="comment-form" action="/home/comment" method="post">
+						<textarea class="comment" name="content"></textarea>
+						<input type="hidden" name="uid" value="{{@useridSession}}">
+						<input type="hidden" name="aid" value="{{@article._id}}">
+						<div class="items">
+							<input type="submit" value="Commit">
+						</div>
+					</form>
+
+					{{else}}
+					<div><h2>Please Login First before write the comment</h2></div>
+					{{/if}}
+				<!-- end to wirte the comment -->					
+					
+				<!--to display those exist comments in MongoDB  -->
+					<div class="comment-list">
+						{{each comments}}
+						<div class="mb10">
+							<div class="article-info">
+								<span class="author">{{$value.uid.username}}</span>
+								<span>{{dateFormat($value.time, 'yyyy-mm-dd')}}</span>
+								<span>{{$value.uid.email}}</span>
+							</div>
+							<div class="comment-content">
+								{{$value.content}}
+							</div>
+						</div>
+						{{/each}}
+					</div>
+				<!--end to display those exist comments in MongoDB  -->
+					
+					</div>
+			</div>
+		</div>
+	</div>
+{{/block}}

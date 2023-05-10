@@ -1,0 +1,100 @@
+.login-body {
+    font-family: 微软雅黑;
+    margin: 0px;
+    padding: 0px;
+    background: url(../images/bg.jpg) center center / cover no-repeat fixed;
+}
+.login-container .title {
+    width: 100%;
+    height: 62px;
+    line-height: 62px;
+    margin-bottom: 0;
+    font-size: 22px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background: -webkit-linear-gradient(top, rgb(233, 88, 10), rgb(220, 61, 10));
+}
+.login-container .login {
+    border-radius: 4px;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+    background: rgb(245, 245, 245);
+    border-top: 0;
+    box-shadow:none;
+    padding: 40px 50px;
+    height: auto;
+}
+.form-group label{
+    display: none;
+}
+.form-control {
+    height: 48px;
+    font-size: 16px;
+    padding: 12px 20px;
+    transition: all 0.2s ease 0s;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(165, 170, 171);
+    border-image: initial;
+    border-radius: 3px;
+    outline: 0px;
+    background: rgb(255, 255, 255);
+    box-shadow: none;
+    margin-bottom:30px;
+}
+.form-control:focus{
+    box-shadow: none;
+    border-color:rgb(165, 170, 171);
+}
+button[type=submit] {
+    font-size: 22px;
+    cursor: pointer;
+    font-family: 微软雅黑;
+    padding: 6px 19px;
+    transition: all 0.2s ease 0s;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    border-radius: 2px;
+    outline: 0px;
+    color: rgb(255, 255, 255);
+    background: rgb(227, 80, 4);
+    width:100%;
+}
+button[type=submit]:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(227, 80, 4);
+    border-color: transparent;
+}
+.savepass {
+    display: block;
+    margin-bottom: 20px;
+    color: rgb(102, 102, 102);
+    overflow: hidden;
+    font-size:16px;
+}
+.savepass-check{
+    float:left;
+}
+.savepass-check::before {
+    line-height: 1;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    content: "✓";
+    background-color: rgb(227, 80, 4);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-color: rgb(227, 80, 4);
+    border-radius: 3px;
+}
+.savepass-a{
+    float:right;
+    color: rgb(227, 80, 4);
+}
